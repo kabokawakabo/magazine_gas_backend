@@ -67,7 +67,7 @@ class MyAPI{
 
   createCreater(req_data){
     const model = new ModelCreater(this.sheets);
-    return model.update(req_data);
+    return model.create(req_data);
   }
   createWork(req_data){
     const { creater_list, ...work_data } = req_data;// {index: creater_id} のリスト
@@ -76,8 +76,19 @@ class MyAPI{
     const work =  model.create(work_data);
 
     const relationModel = new ModelRelationCreaterWork(this.sheets);
-    return creater_list
-      .map(d=> relationModel({creater_id: d.index, work_id: work.index}) ); 
+    const relations = [];
+    for(const d of creater_list){
+      const relation_data = ({
+        creater_id: d.index,
+        work_id: work.index
+      });
+      relations.push(relationModel.create(relation_data)); 
+    }
+
+    return ({
+      ...work,
+      relations
+    });
   }
   createStory(req_data){
     const model = new ModelStory(this.sheets);
