@@ -10,7 +10,6 @@ const SHEET_TYPE = {
   work: "work",
   magazine: "magazine",//雑誌号
   story: "story",// 雑誌号と作品をつなげる + センターカラー、連載順を記録
-  review: "review",
   tag: "tag",// レビューにタグ付け（ワクワク、笑い、絵、...などグループ分け）
 
   relation_creater_work: "relation_creater_work",
@@ -30,11 +29,10 @@ function selectSheetFromType(sheets, type) {
   if(type === SHEET_TYPE.work) return sheets[1];
   if(type === SHEET_TYPE.magazine) return sheets[2];
   if(type === SHEET_TYPE.story) return sheets[3];
-  if(type === SHEET_TYPE.review) return sheets[4];
-  if(type === SHEET_TYPE.tag) return sheets[5];
+  if(type === SHEET_TYPE.tag) return sheets[4];
 
-  if(type === SHEET_TYPE.relation_creater_work) return sheets[6];
-  if(type === SHEET_TYPE.relation_story_tag) return sheets[7];
+  if(type === SHEET_TYPE.relation_creater_work) return sheets[5];
+  if(type === SHEET_TYPE.relation_story_tag) return sheets[6];
 
   throw ReferenceError("該当するsheet typeはありません");
 }
