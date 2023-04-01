@@ -1,4 +1,4 @@
-const PROPATY_KEY = {
+const PROPERTY_KEY = {
   SHEET_ID: "SHEET_ID",
   GOO_APP_ID: "GOO_APP_ID",
 }
@@ -18,7 +18,7 @@ const SHEET_TYPE = {
 
 
 function loadSheets() {
-  const sheet_id = ScriptProperties.getProperty(PROPATY_KEY.SHEET_ID);
+  const sheet_id = ScriptProperties.getProperty(PROPERTY_KEY.SHEET_ID);
   const spreadSheet = SpreadsheetApp.openById(sheet_id);
 
   return spreadSheet.getSheets(); 
