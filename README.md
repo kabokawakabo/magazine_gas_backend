@@ -1,0 +1,2 @@
+# magazine_gas_backend
+magazineデータ記録用のGASを利用したバックエンド
