@@ -7,12 +7,7 @@ function returnJson (json_data) {
 }
 
 function errorStatusOutput (message){
-  const content = JSON.stringify({
-    statusCode: 401,
-    message
-  });
-  return ContentService.setMimeType(ContentService.MimeType.JSON)
-    .setContent(content);
+  // エラー内容を返す方法は ContentServiceにはなかった（JSONに statusを埋め込む方式なら実装可能、その分フロント処理が増えるけど）
 }
 
 
