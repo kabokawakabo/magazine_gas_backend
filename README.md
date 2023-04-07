@@ -10,6 +10,7 @@ magazineデータ記録用のGASを利用したバックエンド
   - Google sheets を操作(データ追加、取り出し、sheet選択)する関数群
 - *my_api*
   -  REST API風操作（reqestに対し処理分岐、response）
+    - post送信だけなのは、listデータからgetしたい場合、query長制限が心配（getがpostに入るかもなら...と統一している）
     - 処理は requestの URL `?path= ~~` の値で区別
 - *controller*
   - my_apiのpath毎に実際の処理を記述
